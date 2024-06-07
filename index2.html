@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Hotel Reservation</title>
+</head>
+<body>
+    <header>
+        <img src="AH.jpg" alt="Logo"> 
+        <nav>
+            <ul>
+                <li><a href="photos.html">Photos</a></li>
+                <li><a href="location.html">Location</a></li>
+                <li><a href="connect.html">Connect with Us</a></li>
+                <li><a href="logout.php">Log Out</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section id="main">
+        <section id="main">
+            <div id="welcomeMessage">
+                <h2>Welcome to ANTI HOTEL</h2>
+                <h3>Your Ideal Stay in Mandaue City, Cebu</h3>
+            </div>
+            <form id="reservationForm" action="reserve.php" method="post">
+        
+            <div class="form-group">
+                    <label for="checkInDate">Check-In Date:</label>
+                    <input type="date" id="checkInDate" name="checkInDate" required>
+            </div>
+            <div class="form-group">
+                <label for="checkOutDate">Check-out Date:</label>
+                <input type="date" id="checkOutDate" name="checkOutDate" required>
+            </div>
+
+            <div class="form-group">
+                <label for="numAdults">Number of Adults:</label>
+                <input type="number" id="numAdultsInput" name="numAdults" min="0" required>
+            </div>
+
+            <div class="form-group">
+                <label for="numChildren">Number of Children:</label>
+                <input type="number" id="numChildrenInput" name="numChildren" min="0" required>
+            </div>
+
+            <div class="form-group">
+                <label for="numRooms">Number of Rooms:</label>
+                <input type="number" id="numRoomsInput" name="numRooms" min="0" required>
+            </div>
+
+            <button type="submit">Reserve Now</button>
+        </form>
+    </section>
+    <footer>
+        <p>&copy; 2023 Hotel Reservation</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

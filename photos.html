@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Hotel Photos and Amenities</title>
+    <style>
+        body {
+            background-image: url('marya.jpg');
+            background-color: #f4f4f4;
+            font-family: Cambria, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .gallery-container {
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        .photo {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .photo img {
+            width: 250px;
+            height: 200px;
+            margin: 10px;
+            border: 2px solid #007bff;
+            border-radius: 5px;
+            transition: transform 0.2s;
+            cursor: pointer;
+        }
+
+        .photo img:hover {
+            transform: scale(1.1);
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+        }
+
+        header a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        header a:hover {
+            text-decoration: underline;
+        }
+
+        .home-icon {
+            font-size: 24px;
+            cursor: pointer;
+            margin-right: auto;
+            margin-left: 10px;
+        }
+
+        
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            padding-top: 50px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.9);
+        }
+
+        .modal-content {
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            max-width: 80%;
+            max-height: 80%;
+            position: relative;
+        }
+
+        .close {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 40px;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        .close:hover {
+            color: #ccc;
+        }
+
+        .modal-content img {
+            width: 70%;
+            height: auto;
+        }
+
+        .details {
+            width: 28%;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="home-icon" onclick="goHome()">⌂</div>
+        <div>
+            <a href="photos.html">Photos</a>
+            <a href="location.html">Location</a>
+            <a href="connect.html">Connect with Us</a>
+        </div>
+    </header>
+
+    <div class="gallery-container">
+        <h1>Hotel Photos</h1>
+        <div class="photo">
+            <img src="photo1.jpg" alt="Photo 1" onclick="openModal('photo1.jpg', 'Our hotel boasts a magnificent swimming pool that invites you to indulge in ultimate relaxation and leisure. Dive into the crystal-clear waters and feel the stress melt away as you soak up the sun on comfortable lounge chairs by the poolside. Whether you want to take a refreshing swim, unwind with a good book, or simply enjoy the serene ambiance, our swimming pool provides a tranquil oasis for guests of all ages.')">
+            <img src="am.jpg" alt="Photo 2" onclick="openModal('am.jpg', 'Photo 2 details')">
+            <img src="photo3.jpg" alt="Photo 3" onclick="openModal('photo3.jpg', 'Step into your private sanctuary, where comfort and elegance converge. Our thoughtfully designed rooms are meticulously appointed to create a haven of relaxation and rejuvenation. Enjoy modern amenities, plush bedding, and tasteful decor that exudes warmth and sophistication. Whether you are traveling for business or pleasure, our rooms provide the perfect retreat to unwind, recharge, and enjoy a peaceful night sleep.')">
+            <img src="photo4.jpg" alt="Photo 4" onclick="openModal('photo4.jpg', 'As you walk through our well-appointed hallways, you will be greeted by an atmosphere of elegance and sophistication. Impeccable design, soft lighting, and tasteful artwork create a welcoming environment that sets the tone for a memorable stay. Our hallways provide a seamless transition between the various areas of the hotel, ensuring your comfort and convenience as you explore and navigate our premises.')">
+            <img src="photo5.jpg" alt="Photo 5" onclick="openModal('photo5.jpg', 'Indulge your taste buds in our vibrant buffet area, where an array of culinary delights awaits. Feast on a diverse selection of dishes, ranging from international favorites to local specialties, all meticulously prepared to tantalize your palate. Our buffet area offers a relaxed and inviting atmosphere, allowing you to savor each bite and create your own gastronomic experience while enjoying the company of loved ones or fellow guests.')">
+            <img src="photo2.jpg" alt="Photo 6" onclick="openModal('photo6.jpg', 'Photo 6 details')">
+            <img src="coffee.jpg" alt="Photo 7" onclick="openModal('coffee.jpg', 'Photo 6 details')">
+            <img src="beach.jpg" alt="Photo 8" onclick="openModal('beach.jpg', 'Photo 6 details')">
+        </div>
+    </div>
+
+    <div class="modal" id="myModal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <img id="modal-img" src="" alt="">
+            <div class="details" id="modal-details"></div>
+        </div>
+    </div>
+
+    <script>
+        function goHome() {
+            window.location.href = "index.html";
+        }
+
+        function openModal(imageSrc, details) {
+            const modal = document.getElementById("myModal");
+            const modalImg = document.getElementById("modal-img");
+            const modalDetails = document.getElementById("modal-details");
+
+            modal.style.display = "block";
+            modalImg.src = imageSrc;
+            modalDetails.innerHTML = `<h2>Details</h2><p>${details}</p>`;
+        }
+
+        function closeModal() {
+            document.getElementById("myModal").style.display = "none";
+        }
+    </script>
+</body>
+</html>

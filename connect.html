@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Contact US</title>
+    <style>
+        body {
+            background-image: url('marya.jpg');
+            background-color: #f4f4f4;
+            font-family: Cambria, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+        }
+
+        header a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        header a:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            text-decoration: none;
+            color: #007bff;
+            font-size: 20px;
+            margin: 0 20px;
+        }
+
+        .social-links img {
+            width: 30px;
+            height: 30px;
+            margin-right: 5px;
+        }
+
+        .contact-info {
+            font-size: 18px;
+            margin: 20px 0;
+        }
+
+        .contact-form {
+            text-align: left;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .contact-form label {
+            display: block;
+            font-weight: bold;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin: 10px 0;
+        }
+
+        .contact-form button {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .home-icon {
+            font-size: 24px;
+            cursor: pointer;
+            margin-left: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="home-icon" onclick="goHome()">⌂</div>
+        <div>
+            <a href="photos.html">Photos</a>
+            <a href="location.html">Location</a>
+            <a href="connect.html">Contect with Us</a>
+        </div>
+    </header>
+
+    <div class="container">
+        <h1>Connect with Us</h1>
+        <div class="social-links">
+            <a href="https://www.facebook.com//profile.php?id=61552786209829" target="_blank">
+                <img src="fblogo.png" alt="Facebook Logo">Facebook
+            </a>
+            <a href="https://twitter.com/AntiHotel2368" target="_blank">
+                <img src="twitterlogo.png" alt="Twitter Logo">Twitter
+            </a>
+            <a href="https://www.instagram.com/ANTIHotel" target="_blank">
+                <img src="iglogo.webp" alt="Instagram Logo">Instagram
+            </a>
+            <a href="https://www.linkedin.com/company/ANTIHotel" target="_blank">
+                <img src="linlogo.png" alt="LinkedIn Logo">LinkedIn
+            </a>
+        </div>
+
+        <div class="contact-info">
+            <p>If you have any questions or need assistance, please feel free to reach out to us:</p>
+            <p>Email: contact@jezrah.com</p>
+            <p>Phone: +639 092234 233</p>
+        </div>
+
+        <form class="contact-form">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+    <script>
+        function goHome() {
+            window.location.href = "index.html";
+        }
+
+        function openModal(imageSrc, details) {
+            const modal = document.getElementById("myModal");
+            const modalImg = document.getElementById("modal-img");
+            const modalDetails = document.getElementById("modal-details");
+
+            modal.style.display = "block";
+            modalImg.src = imageSrc;
+            modalDetails.innerHTML = `<h2>Details</h2><p>${details}</p>`;
+        }
+
+        function closeModal() {
+            document.getElementById("myModal").style.display = "none";
+        }
+              
+
+    </script>
+</body>
+
+</html>
